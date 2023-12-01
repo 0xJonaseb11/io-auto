@@ -6,6 +6,9 @@ const RealTimeComponent = () => {
 
   useEffect(() => {
     const socket = socketIOClient('http://localhost:3000')
-    
+
+    socket.io('update', (data) => {
+      setMessage(data.message);
+    });
   })
 }
