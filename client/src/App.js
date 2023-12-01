@@ -10,5 +10,16 @@ const RealTimeComponent = () => {
     socket.io('update', (data) => {
       setMessage(data.message);
     });
-  })
-}
+
+
+    // clean up the socket connection when the component unmounts
+    return () => socket.disconnect();
+  }, []);
+
+  return (
+    <div>
+      <h1>Real time updates</h1>
+      <p>{message}</p>
+    </div>
+  );
+};
