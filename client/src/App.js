@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import socketIOClient from 'socket.io-client';
 
-const RealTimeComponent = () => {
+const App = () => {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
@@ -23,3 +23,5 @@ const RealTimeComponent = () => {
     </div>
   );
 };
+
+export default App;
